@@ -1,29 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap");
 
+:root {
+    /* Mendefinisikan font family global */
+    --font-utama: "Rubik", sans-serif;
+    --font-secondary: "Cabin", sans-serif;
+    --font-third: "Vollkorn", serif;
+    --font-size-base-1: 1rem;
+    --font-size-base-2: 0.9rem;
+    --background-primary: #fff;
+    --background-secondary: #000;
+    --text-color-primary: #000;
+    --text-color-secondary: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .container {
     margin: 0;
-    padding: 0;
+    padding: 0px 0px;
 }
 
 .wrappertengah {
-    width: 980px;
-    margin: 0 auto;
-    background-color: aqua;
+    width: 100%;
+    /* margin: 0 auto; */
 }
 
 .topbar {
-    background-color: black;
-    color: white;
+    background-color: var(--background-secondary);
+    color: var(--text-color-secondary);
     padding: 10px 0;
     text-align: center;
-    font-style: "Rubik", sans-serif;
-    font-size: 1rem;
+    font-style: var(--font-utama);
+    font-size: var(--font-size-base);
     font-weight: 300;
     overflow: hidden; /* Penting agar teks yang keluar batas tidak terlihat */
 }
@@ -55,6 +71,27 @@
 
 /* Menghilangkan margin default p agar rapi di tengah */
 .carousel-item p {
-    font-size: 0.9rem;
+    font-size: var(--font-size-base-2);
     font-weight: 400;
+}
+
+.logo {
+    padding: 0px 10px;
+}
+
+/* Media query untuk layar lebih besar */
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0px 0px;
+    }
+    .wrappertengah {
+        width: 980px;
+        margin: 0 auto;
+        /* background-color: aqua; */
+    }
+
+    .logo {
+        padding: 0px 30px;
+    }
 }

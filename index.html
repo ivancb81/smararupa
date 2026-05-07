@@ -6,14 +6,32 @@
         <title>Bootstrap demo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+            .logo-spacing {
+                letter-spacing: 2px;
+            }
+            .est-spacing {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+            .menu-spacing {
+                letter-spacing: 1px;
+            }
+            .custom-badge {
+                background-color: #7ab9e0; /* Warna biru muda seperti di gambar */
+                font-size: 0.65rem;
+                padding: 0.35em 0.5em;
+            }
+        </style>
     </head>
     <body>
         <div class="wrappertengah">
             <div class="container">
                 <header>
                     <section class="topbar">
-                        <div class="row">
-                            <div class="col-lg-12">
+                        <div class="row m-0">
+                            <div class="col-lg-12 col-md-12 col-12">
                                 <!-- Bootstrap Carousel -->
                                 <div id="topbarSlider" class="carousel slide vertical-slide" data-bs-ride="carousel" data-bs-interval="3000">
                                     <div class="carousel-inner">
@@ -45,38 +63,75 @@
                             </div>
                         </div>
                     </section>
+                    <section class="logo">
+                        <div class="row align-items-center py-4 m-0">
+                            <div class="col-3 col-lg-4">
+                                <button class="btn btn-link text-dark p-0 fs-3 d-lg-none text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                                    <i class="fa-solid fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="col-5 col-lg-4 text-center d-flex flex-column align-items-center">
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <img src="images/logo.png" class="w-50" alt="" />
+                                </a>
+                            </div>
+
+                            <div class="col-4 col-lg-4 d-flex justify-content-end align-items-center gap-3 gap-lg-4">
+                                <a href="#" class="text-decoration-none text-dark d-none d-lg-inline fw-medium menu-spacing fs-6">ACCOUNT</a>
+                                <a href="#" class="text-dark d-none d-lg-inline fs-5"><i class="fa-solid fa-heart"></i></a>
+                                <a href="#" class="text-dark d-lg-none fs-5"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                <a href="#" class="text-dark d-lg-none fs-5"><i class="fa-regular fa-user"></i></a>
+                                <a href="#" class="text-dark position-relative fs-5">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill custom-badge">1</span>
+                                </a>
+                                <a href="#" class="text-dark d-none d-lg-inline fs-5"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            </div>
+                        </div>
+                        <nav class="d-none d-lg-block border-top border-bottom border-dark py-3">
+                            <ul class="nav justify-content-center gap-5">
+                                <li class="nav-item"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">NEW ARRIVAL</a></li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">BRANDS <i class="fa-solid fa-chevron-down ms-1" style="font-size: 10px"></i></a>
+                                </li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">BOOKS</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">COLLECTIBLE</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">CLOTHING</a></li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">LIFESTYLE <i class="fa-solid fa-chevron-down ms-1" style="font-size: 10px"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
                 </header>
-                <main>xxx</main>
+                <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title fw-bold logo-spacing fs-4" id="mobileMenuLabel">MENU</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav flex-column gap-3 mt-2">
+                            <li class="nav-item border-bottom pb-2"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">NEW ARRIVAL</a></li>
+                            <li class="nav-item border-bottom pb-2 d-flex justify-content-between align-items-center">
+                                <a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">BRANDS</a>
+                                <i class="fa-solid fa-chevron-down text-muted"></i>
+                            </li>
+                            <li class="nav-item border-bottom pb-2"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">BOOKS</a></li>
+                            <li class="nav-item border-bottom pb-2"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">COLLECTIBLE</a></li>
+                            <li class="nav-item border-bottom pb-2"><a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">CLOTHING</a></li>
+                            <li class="nav-item border-bottom pb-2 d-flex justify-content-between align-items-center">
+                                <a href="#" class="nav-link text-dark fw-medium p-0 menu-spacing">LIFESTYLE</a>
+                                <i class="fa-solid fa-chevron-down text-muted"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <main></main>
                 <footer></footer>
             </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
-        <script>
-            async function updateTopbar() {
-                const textElement = document.getElementById("marquee-data");
-                const apiUrl = "api/get-news.php"; // Ganti dengan URL API Anda
-
-                try {
-                    const response = await fetch(apiUrl);
-
-                    if (!response.ok) {
-                        throw new Error("Gagal mengambil data");
-                    }
-
-                    const data = await response.json();
-
-                    // Misalkan struktur JSON dari server adalah: { "message": "Teks dari Database" }
-                    textElement.innerText = data.message;
-                } catch (error) {
-                    console.error("Error:", error);
-                    textElement.innerText = "Selamat Datang di Website Kami"; // Fallback jika gagal
-                }
-            }
-
-            // Jalankan fungsi saat halaman selesai dimuat
-            document.addEventListener("DOMContentLoaded", updateTopbar);
-        </script>
     </body>
 </html>
