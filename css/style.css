@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.wrappertengah {
+    width: 980px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+.topbar {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-style: "Rubik", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    overflow: hidden; /* Penting agar teks yang keluar batas tidak terlihat */
+}
+
+.vertical-slide .carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.vertical-slide .carousel-item-next.carousel-item-start,
+.vertical-slide .carousel-item-prev.carousel-item-end {
+    transform: translateY(0);
+}
+
+.vertical-slide .active.carousel-item-start {
+    transform: translateY(-100%);
+}
+
+.vertical-slide .active.carousel-item-end {
+    transform: translateY(100%);
+}
+
+.vertical-slide .carousel-item-next {
+    transform: translateY(100%);
+}
+
+.vertical-slide .carousel-item-prev {
+    transform: translateY(-100%);
+}
+
+/* Menghilangkan margin default p agar rapi di tengah */
+.carousel-item p {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
