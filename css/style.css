@@ -1,16 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Rubik:ital@0;1&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
     /* Mendefinisikan font family global */
-    --font-utama: "Rubik", sans-serif;
-    --font-secondary: "Cabin", sans-serif;
-    --font-third: "Vollkorn", serif;
-    --font-size-base-1: 1rem;
-    --font-size-base-2: 0.9rem;
-    --background-primary: #fff;
-    --background-secondary: #000;
-    --text-color-primary: #000;
-    --text-color-secondary: #fff;
+    --font-rubik: "Rubik", sans-serif;
+    --font-cabin: "Cabin", sans-serif;
+    --font-vollkorn: "Vollkorn", serif;
+    --font-work-sans: "Work Sans", sans-serif;
+    --font-size-0-65rem: 0.65rem;
+    --font-size-0-75rem: 0.75rem;
+    --font-size-0-8rem: 0.8rem;
+    --font-size-0-9rem: 0.9rem;
+    --font-size-1rem: 1rem;
+    --font-size-1-1rem: 1.1rem;
+    --font-size-1-2rem: 1.2rem;
+    --font-size-1-4rem: 1.4rem;
+    --font-size-1-5rem: 1.5rem;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-weight-900: 900;
+    --background-white: #fff;
+    --background-black: #000;
+    --background-7ab9e0: #7ab9e0;
+    --text-color-black: #000;
+    --text-color-white: #fff;
+    --text-color-313: #313131;
+    --text-color-333: #333333;
+    --text-color-888: #888888;
 }
 
 * {
@@ -21,6 +40,7 @@
 
 body {
     overflow-x: hidden;
+    height: 2000px;
 }
 
 .container {
@@ -34,13 +54,13 @@ body {
 }
 
 .topbar {
-    background-color: var(--background-secondary);
-    color: var(--text-color-secondary);
+    background-color: var(--background-black);
+    color: var(--text-color-white);
     padding: 10px 0;
     text-align: center;
-    font-style: var(--font-utama);
-    font-size: var(--font-size-base);
-    font-weight: 300;
+    font-style: var(--font-rubik);
+    font-size: var(--font-size-0-9rem);
+    font-weight: var(--font-weight-300);
     overflow: hidden; /* Penting agar teks yang keluar batas tidak terlihat */
 }
 
@@ -71,12 +91,478 @@ body {
 
 /* Menghilangkan margin default p agar rapi di tengah */
 .carousel-item p {
-    font-size: var(--font-size-base-2);
-    font-weight: 400;
+    font-size: var(--font-size-0-9rem);
+    font-weight: var(--font-weight-400);
 }
 
 .logo {
     padding: 0px 10px;
+    margin-bottom: 10px;
+    /* background-color: aqua; */
+}
+/* 
+.logo-spacing {
+    letter-spacing: 2px;
+}
+
+.menu-spacing {
+    letter-spacing: 1px;
+} */
+.custom-badge {
+    background-color: var(--background-7ab9e0); /* Warna biru muda seperti di gambar */
+    font-size: var(--font-size-0-65rem);
+    padding: 0.35em 0.5em;
+    margin-top: 5px;
+}
+
+nav ul li {
+    font-family: var(--font-fourth);
+    font-size: var(--font-size-base-3);
+    color: var(--text-color-third);
+}
+
+nav ul li a:hover {
+    background-color: var(--background-secondary);
+    color: var(--text-color-secondary);
+}
+
+.text-account {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--text-color-313);
+    font-weight: var(--font-weight-300r);
+    letter-spacing: 3px;
+}
+
+#content {
+    padding: 0px 10px;
+    /* margin-top: 20px; */
+}
+
+#myCarousel {
+    overflow: hidden;
+}
+
+/* Menimpa durasi bawaan Bootstrap (0.6s) menjadi 1.2s */
+.carousel-fade .carousel-item {
+    transition: opacity 1.2s ease-in-out !important;
+}
+
+/* Reset Dasar Tombol Bootstrap */
+.custom-hover-effect {
+    width: auto !important;
+    opacity: 1 !important;
+    pointer-events: none;
+    display: flex;
+    align-items: center; /* Membuat ikon berada di tengah secara vertikal */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Pisahkan Posisi Ujung Kiri dan Kanan agar tidak ke tengah */
+.carousel-control-prev.custom-hover-effect {
+    left: 0 !important;
+    right: auto !important;
+}
+
+.carousel-control-next.custom-hover-effect {
+    right: 0 !important;
+    left: auto !important;
+}
+
+/* Styling Ikon Custom (FontAwesome) */
+.custom-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-black) !important ;
+    pointer-events: auto;
+    font-size: var(--font-size-1-4rem) !important;
+
+    /* Animasi masuk dan keluar yang smooth */
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.6s ease;
+}
+
+.custom-icon i {
+    font-weight: var(--font-weight-900) !important;
+}
+
+/* --- SETTING AWAL (SEMBUNYI & TEPAT DI LUAR GARIS TEPI) --- */
+.carousel-control-prev.custom-hover-effect .custom-icon {
+    opacity: 0;
+    transform: translateX(-50px); /* Ikon Prev bersembunyi di luar kiri */
+}
+
+.carousel-control-next.custom-hover-effect .custom-icon {
+    opacity: 0;
+    transform: translateX(50px); /* Ikon Next bersembunyi di luar kanan */
+}
+
+/* --- SETTING SAAT HOVER (MELUNCUR KE DALAM 20px) --- */
+#myCarousel:hover .carousel-control-prev.custom-hover-effect .custom-icon {
+    opacity: 1;
+    transform: translateX(20px); /* Meluncur masuk ke kanan sejauh 20px */
+}
+
+#myCarousel:hover .carousel-control-next.custom-hover-effect .custom-icon {
+    opacity: 1;
+    transform: translateX(-20px); /* Meluncur masuk ke kiri sejauh 20px */
+}
+
+/* --- SETTING SAAT KURSOR TEPAT DI ATAS IKON --- */
+.custom-icon:hover {
+    color: gray !important;
+    cursor: pointer;
+}
+
+#product h2 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base-4);
+    color: var(--text-color-primary);
+    font-weight: var(--font-weight-400);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+/* Wrapper Utama (Mengunci layout dan memberi ruang) */
+.product-carousel-wrapper {
+    /* Angka 60px ini adalah total lebar panah (sekitar 30px) + gap kosong (sekitar 30px) */
+    padding: 0 60px;
+    max-width: 100%;
+}
+
+/* Kontainer Swiper itu sendiri */
+.productSwiper {
+    width: 100%;
+    /* Berikan sedikit padding vertikal agar efek box-shadow buku tidak terpotong */
+    padding: 15px 0;
+}
+
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 1. Kondisi Awal Tombol (Sembunyi di Bawah Gambar) */
+.quick-add-btn {
+    position: absolute;
+    bottom: -60px; /* Posisi di bawah garis batas gambar */
+    left: 50%;
+    transform: translateX(-50%); /* Memastikan posisi tepat di tengah horizontal */
+    width: 90%;
+    background-color: var(--background-white); /* Putih */
+    color: var(--text-color-black); /* Hitam */
+    border: 1px solid #d1d1d1;
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    letter-spacing: 3px;
+    padding: 12px 0;
+    opacity: 0; /* Transparan */
+    z-index: 2; /* Berada di atas gambar */
+    /* Cubic-bezier memberikan efek animasi yang smooth dan sedikit mengerem saat mau berhenti */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 2. Kondisi Saat Card/Gambar Di-Hover (Tombol Meluncur Naik) */
+.product-card:hover .quick-add-btn {
+    bottom: 15px; /* Jarak 15px dari bawah gambar */
+    opacity: 1; /* Menjadi terlihat penuh */
+}
+
+/* 3. Kondisi Saat Tombol Quick Add Sendiri Di-Hover (Invert Warna) */
+.quick-add-btn:hover {
+    background-color: var(--background-black); /* Menjadi Hitam */
+    color: var(--text-color-white); /* Teks menjadi Putih */
+    border-color: var(--background-black);
+    cursor: pointer;
+}
+
+/* Navigasi Panah Swiper Custom */
+.custom-swiper-nav::after {
+    font-size: var(--font-size-1-2rem) !important;
+    color: var(--text-color-black) !important;
+}
+
+/* Menarik panah sejauh mungkin ke ujung batas .product-carousel-wrapper */
+.swiper-button-prev.custom-swiper-nav {
+    left: 0 !important;
+}
+
+.swiper-button-next.custom-swiper-nav {
+    right: 0 !important;
+}
+
+.product-title {
+    font-family: var(--font-cabin);
+    letter-spacing: 2px;
+    color: var(--font-color-313);
+    font-weight: var(--font-weight-300);
+    font-size: var(--font-size-0-9rem);
+}
+
+.product-author {
+    font-family: var(--font-vollkorn);
+    font-size: var(--font-size-0-9rem);
+    color: var(--text-color-313);
+    font-weight: var(--font-weight-300);
+    letter-spacing: 2px;
+}
+
+.product-price {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--text-color-313);
+    font-weight: var(--font-weight-300);
+    letter-spacing: 2px;
+}
+
+/* 1. Hilangkan panah tebal bawaan dari Swiper */
+.custom-swiper-nav::after {
+    display: none !important;
+}
+
+/* 2. Styling untuk ikon FontAwesome */
+.custom-swiper-nav {
+    width: 40px; /* Area klik panah */
+    height: 40px;
+}
+
+.custom-swiper-nav i {
+    font-size: var(--font-size-1rem); /* Ukuran panjang panah, sesuaikan jika kurang besar */
+    color: var(--text-color-black); /* Menggunakan warna hitam dari variabel Anda */
+    transition: color 0.2s ease;
+}
+
+/* Opsional: Ubah warna panah saat di-hover agar lebih interaktif */
+.custom-swiper-nav:hover i {
+    color: var(--text-color-888); /* Warna abu-abu saat di-hover, sesuaikan jika perlu */
+}
+
+/* 3. Posisi ditarik ke ujung kiri dan kanan wrapper */
+.swiper-button-prev.custom-swiper-nav {
+    left: 0 !important;
+}
+
+.swiper-button-next.custom-swiper-nav {
+    right: 0 !important;
+}
+
+.content-2 p {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--text-color-313);
+    font-weight: var(--font-weight-300);
+    letter-spacing: 2px;
+    text-align: justify;
+    background-color: transparent;
+}
+
+.quote h2 {
+    font-family: var(--font-vollkorn);
+    font-size: var(--font-size-1-4rem);
+    color: var(--text-color-313);
+    font-weight: var(--font-weight-500);
+}
+
+.quote p {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--text-color-313);
+    font-weight: var(--font-weight-300);
+    letter-spacing: 1px;
+    margin-top: 30px;
+}
+
+.follow-our-instagram {
+    font-family: "Helvetica", sans-serif;
+    font-size: var(--font-size-0-9rem);
+    color: var(--text-color-313);
+    font-weight: 300;
+}
+
+/* ==========================================================
+   STYLING INSTAGRAM HOVER EFFECT
+   ========================================================== */
+
+/* Kontainer utama thumbnail */
+.ig-thumbnail {
+    display: block;
+    position: relative;
+    overflow: hidden; /* Mencegah gambar meluber saat di-zoom */
+    cursor: pointer;
+}
+
+/* Memastikan gambar memenuhi kontainer */
+.ig-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* Transisi untuk efek zoom */
+}
+
+/* Layer transparan (Background hitam 50%) */
+.ig-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% Opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Tersembunyi pada awalnya */
+    transition: opacity 0.4s ease;
+}
+
+/* Ikon Instagram */
+.ig-overlay i {
+    color: #ffffff;
+    font-size: 3rem; /* Ukuran ikon */
+    transform: scale(0.5); /* Ikon sedikit mengecil saat sembunyi */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- EFEK SAAT MOUSE DI ARAHKAN (HOVER) --- */
+
+/* 1. Munculkan overlay hitam transparan */
+.ig-thumbnail:hover .ig-overlay {
+    opacity: 1;
+}
+
+/* 2. Berikan efek ikon membesar (pop-up) */
+.ig-thumbnail:hover .ig-overlay i {
+    transform: scale(0.6);
+}
+
+/* 3. (Opsional) Gambar asli akan sedikit nge-zoom ke dalam */
+.ig-thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+/* 1. Styling Judul Kolom (Dengan Garis Bawah Presisi) */
+.footer-heading {
+    font-size: var(--font-size-0-8rem);
+    font-weight: var(--font-weight-400);
+    letter-spacing: 2px; /* Jarak huruf renggang */
+    color: var(--text-color-black);
+    font-family: var(--font-cabin);
+    /* Trik agar garis bawah hanya sepanjang teks */
+    display: inline-block;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 25px; /* Jarak antara judul dan list menu */
+}
+
+/* 2. Reset List Default */
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 5px !important; /* Jarak antar baris yang luas seperti di gambar */
+}
+
+/* 3. Styling Teks & Link Menu */
+.footer-menu a,
+.footer-menu span {
+    text-decoration: none;
+    color: var(--text-color-313); /* Warna abu-abu gelap/hitam pudar */
+    font-family: var(--font-rubik); /* Font sans-serif yang rapi */
+    font-size: var(--font-size-0-75rem);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-300);
+    transition: color 0.3s ease;
+}
+
+/* Efek Hover untuk Link */
+.footer-menu a:hover {
+    color: #000000;
+}
+
+/* 4. Styling Khusus Ikon */
+.footer-menu i {
+    color: var(--font-color-313); /* Warna ikon hitam/abu gelap */
+    /* Ikon tidak akan berubah bentuk meskipun teks di sebelahnya panjang */
+    flex-shrink: 0;
+}
+
+.footer-content {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--font-color-313);
+    letter-spacing: 3px;
+    font-weight: var(--font-weight-300);
+    line-height: var(--font-size-1-4rem);
+}
+
+.footer-follow-us {
+    font-size: var(--font-size-0-8rem);
+    font-weight: var(--font-weight-400);
+    letter-spacing: 2px; /* Jarak huruf renggang */
+    color: var(--text-color-black);
+    font-family: var(--font-cabin);
+    /* Trik agar garis bawah hanya sepanjang teks */
+    display: inline-block;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 15px; /* Jarak antara judul dan list menu */
+}
+
+.footer-copyright {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--font-color-313);
+    font-weight: var(--font-weight-300);
+    margin: 40px 0px;
+}
+
+.floating-chat-widget {
+    position: fixed;
+    bottom: 20px; /* Jarak dari bawah layar */
+    right: 20px; /* Jarak dari kanan layar */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara kapsul teks dan tombol bulat */
+    z-index: 9999; /* Memastikan selalu berada di lapisan paling atas */
+    text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+}
+
+/* .floating-chat-widget {
+    bottom: 20px;
+    right: 20px;
+} */
+
+/* Opsional: Sembunyikan teks di HP agar tidak menutupi layar, hanya tampil tombolnya saja */
+.chat-label {
+    display: none;
+}
+
+.chat-button {
+    width: 45px;
+    height: 45px;
+    background-color: #2b2b2b; /* Warna abu-abu sangat gelap hampir hitam */
+    color: #ffffff; /* Warna ikon putih */
+    border-radius: 50%; /* Membuat lingkaran sempurna */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-1-4rem); /* Ukuran ikon */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih pekat */
+    transition: all 0.3s ease;
 }
 
 /* Media query untuk layar lebih besar */
@@ -88,10 +574,92 @@ body {
     .wrappertengah {
         width: 980px;
         margin: 0 auto;
-        /* background-color: aqua; */
     }
 
     .logo {
-        padding: 0px 30px;
+        padding: 0px 20px;
+    }
+
+    /* --- Styling Hover Menu Desktop --- */
+    .menu-hover {
+        /* 16px untuk atas-bawah (menggantikan py-3), dan 10px untuk kanan-kiri */
+        padding: 10px 15px !important;
+        transition: background-color 0.2s ease-in-out;
+        border-radius: 0; /* Memastikan sudut kotak (tidak membulat) */
+        font-family: var(--font-rubik);
+        font-size: var(--font-size-0-75rem);
+        font-weight: var(--font-weight-300);
+    }
+
+    /* Efek saat mouse berada di atas menu */
+    .menu-hover:hover {
+        background-color: var(--background-black); /* Warna latar abu-abu muda, silakan ganti sesuai desain */
+        color: var(--text-color-white) !important; /* Memastikan teks tetap hitam */
+    }
+
+    .custom-fixed-header {
+        /* Samakan dengan lebar .wrappertengah Anda */
+        width: 980px !important;
+        /* Pusatkan elemen fixed */
+        left: 50% !important;
+        transform: translateX(-50%);
+        right: auto !important;
+    }
+
+    #content {
+        padding: 0px 20px;
+        margin-top: 20px;
+    }
+
+    /* Kontainer Utama yang mengunci posisi di layar */
+    .floating-chat-widget {
+        position: fixed;
+        bottom: 30px; /* Jarak dari bawah layar */
+        right: 30px; /* Jarak dari kanan layar */
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Jarak antara kapsul teks dan tombol bulat */
+        z-index: 9999; /* Memastikan selalu berada di lapisan paling atas */
+        text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+    }
+
+    /* Kotak Teks Kapsul Putih */
+    .chat-label {
+        background-color: var(--background-white); /* Warna putih */
+        color: var(--text-color-black); /* Warna hitam */
+        font-family: var(--font-cabin); /* Menggunakan font sekunder Anda */
+        font-size: var(--font-size-0-9rem);
+        letter-spacing: 2px; /* Renggang huruf seperti di gambar */
+        padding: 7px 15px;
+        border-radius: 10px; /* Membuat bentuk kapsul */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih pekat */
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    /* Tombol Bulat Gelap */
+    .chat-button {
+        width: 65px;
+        height: 65px;
+        background-color: #2b2b2b; /* Warna abu-abu sangat gelap hampir hitam */
+        color: #ffffff; /* Warna ikon putih */
+        border-radius: 50%; /* Membuat lingkaran sempurna */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--font-size-1-4rem); /* Ukuran ikon */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih pekat */
+        transition: all 0.3s ease;
+    }
+
+    /* --- EFEK SAAT MOUSE DI ARAHKAN (HOVER) --- */
+    .floating-chat-widget:hover .chat-button {
+        background-color: var(--background-black); /* Menjadi hitam pekat saat dihover */
+        transform: scale(1.05); /* Membesar sedikit */
+    }
+
+    .floating-chat-widget:hover .chat-label {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Bayangan membesar */
+        transform: translateY(-2px); /* Teks sedikit naik */
     }
 }
