@@ -617,6 +617,10 @@ nav ul li a:hover {
     margin-bottom: 0px;
 }
 
+.footer-logo img {
+    max-width: 150px;
+}
+
 /* Media query untuk layar lebih besar */
 
 @media (min-width: 768px) {
