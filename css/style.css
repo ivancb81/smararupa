@@ -95,6 +95,12 @@ body {
     font-weight: var(--font-weight-400);
 }
 
+#myCarousel .carousel-item img {
+    height: 470px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
 .logo {
     padding: 0px 10px;
     margin-bottom: 10px;
@@ -391,10 +397,6 @@ nav ul li a:hover {
     font-weight: 300;
 }
 
-/* ==========================================================
-   STYLING INSTAGRAM HOVER EFFECT
-   ========================================================== */
-
 /* Kontainer utama thumbnail */
 .ig-thumbnail {
     display: block;
@@ -533,7 +535,7 @@ nav ul li a:hover {
 .floating-chat-widget {
     position: fixed;
     bottom: 20px; /* Jarak dari bawah layar */
-    right: 20px; /* Jarak dari kanan layar */
+    right: 25px; /* Jarak dari kanan layar */
     display: flex;
     align-items: center;
     gap: 15px; /* Jarak antara kapsul teks dan tombol bulat */
@@ -563,6 +565,13 @@ nav ul li a:hover {
     font-size: var(--font-size-1-4rem); /* Ukuran ikon */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih pekat */
     transition: all 0.3s ease;
+}
+
+#content h3 {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-1-1rem);
+    letter-spacing: 1px;
+    margin-bottom: 0px;
 }
 
 /* Media query untuk layar lebih besar */
