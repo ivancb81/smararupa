@@ -548,6 +548,49 @@ nav ul li a:hover {
     right: 20px;
 } */
 
+.floating-wishlist-vertical {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* Menarik presisi ke tengah vertikal */
+    background-color: #5ba9c6; /* Warna biru sesuai gambar referensi */
+    color: #ffffff;
+
+    /* Flexbox Column: Menyusun isi menjadi vertikal (atas ke bawah) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px 4px; /* Padding atas-bawah 20px, kiri-kanan 8px */
+    border-radius: 0 6px 6px 0; /* Melengkung kecil di sisi kanan saja */
+    z-index: 9999;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+    gap: 8px; /* Jarak antara teks dan ikon hati */
+    transition: all 0.3s ease;
+}
+
+.wishlist-text {
+    /* Trik Rahasia: Membuat teks vertikal membaca dari bawah ke atas */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    font-family: var(--font-cabin); /* Menggunakan font sans-serif yang rapi */
+    font-size: var(--font-size-0-8rem);
+    letter-spacing: 2px;
+    white-space: nowrap; /* Mencegah teks patah/turun baris */
+}
+
+.floating-wishlist-vertical i {
+    font-size: var(--font-size-0-8rem);
+    writing-mode: vertical-rl;
+    transform: rotate(-90deg);
+    white-space: nowrap; /* Mencegah teks patah/turun baris */
+}
+
+/* Efek saat tab disentuh di HP */
+.floating-wishlist-vertical:active {
+    background-color: #4a8fa8; /* Warna biru sedikit lebih gelap */
+}
 /* Opsional: Sembunyikan teks di HP agar tidak menutupi layar, hanya tampil tombolnya saja */
 .chat-label {
     display: none;
