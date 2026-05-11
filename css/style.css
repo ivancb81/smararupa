@@ -30,6 +30,7 @@
     --text-color-313: #313131;
     --text-color-333: #333333;
     --text-color-888: #888888;
+    --text-color-778460: #778460;
 }
 
 * {
@@ -40,7 +41,6 @@
 
 body {
     overflow-x: hidden;
-    height: 2000px;
 }
 
 .container {
@@ -106,6 +106,7 @@ body {
     margin-bottom: 10px;
     /* background-color: aqua; */
 }
+
 /* 
 .logo-spacing {
     letter-spacing: 2px;
@@ -492,7 +493,8 @@ nav ul li a:hover {
 
 /* Efek Hover untuk Link */
 .footer-menu a:hover {
-    color: #000000;
+    color: var(--text-color-778460);
+    font-weight: 900;
 }
 
 /* 4. Styling Khusus Ikon */
@@ -621,6 +623,22 @@ nav ul li a:hover {
     max-width: 150px;
 }
 
+.aboutus-text {
+    margin-bottom: 60px;
+}
+
+.aboutus-text h2 {
+    font-family: var(--font-cabin);
+    font-size: var(--font-size-1-5rem);
+}
+
+.aboutus-text p {
+    font-family: var(--font-rubik);
+    font-size: var(--font-size-0-8rem);
+    color: var(--text-color-888);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
 /* Media query untuk layar lebih besar */
 
 @media (min-width: 768px) {
