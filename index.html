@@ -49,7 +49,7 @@
                     </section>
                     <section class="logo">
                         <div class="row align-items-center py-3 m-0">
-                            <div class="col-3 col-lg-4">
+                            <div class="col-3 col-lg-4 text-start ps-0">
                                 <button class="btn btn-link text-dark p-0 fs-3 d-lg-none text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
                                     <i class="fa-solid fa-bars"></i>
                                 </button>
@@ -522,8 +522,8 @@
                     </section>
                     <h5 class="text-center follow-our-instagram my-4">FOLLOW OUR INSTAGRAM</h5>
                     <section id="instagram">
-                        <div class="row gy-4">
-                            <div class="col-12 col-lg-3 col-md-6">
+                        <div class="row gy-2 gx-2">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -531,7 +531,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -539,7 +539,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -547,7 +547,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -555,7 +555,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -563,7 +563,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -571,7 +571,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -579,7 +579,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-12 col-lg-3 col-md-6">
+                            <div class="col-3 col-lg-3 col-md-3">
                                 <a href="#" class="ig-thumbnail">
                                     <img src="pictures/686086349_18577398157052272_3460604009596826435_n.jpg" alt="Instagram Post" class="img-fluid w-100" />
                                     <div class="ig-overlay">
@@ -686,21 +686,31 @@ Kementerian Perdagangan Republik Indonesia <br/>
 
                 // 4. Jalankan Swiper
                 new Swiper(swiperElement, {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    slidesPerGroup: 1,
+                    // SETTING DASAR (Berlaku untuk Mobile / HP)
+                    slidesPerView: 2,       // <--- UBAH DI SINI: Tampil 2 gambar di HP
+                    spaceBetween: 10,       // <--- Jarak antar gambar diperkecil agar pas di HP
+                    slidesPerGroup: 1,      // Tetap geser 1 per 1
                     loop: true,
                     autoplay: {
                         delay: 3000,
                         disableOnInteraction: false,
                     },
                     navigation: {
-                        nextEl: nextBtn, // Hubungkan dengan tombol panah spesifik ini
-                        prevEl: prevBtn, // Hubungkan dengan tombol panah spesifik ini
+                        nextEl: nextBtn,  
+                        prevEl: prevBtn,  
                     },
+                    // RESPONSIVITAS UNTUK LAYAR BESAR
                     breakpoints: {
-                        768: { slidesPerView: 2 },
-                        1024: { slidesPerView: 4 },
+                        // Saat layar >= 768px (Tablet / iPad)
+                        768: { 
+                            slidesPerView: 3, // Tampil 3 gambar
+                            spaceBetween: 20  // Jarak dikembalikan normal
+                        },
+                        // Saat layar >= 1024px (Laptop / Desktop)
+                        1024: { 
+                            slidesPerView: 4, // Tampil 4 gambar
+                            spaceBetween: 20  // Jarak dikembalikan normal
+                        },
                     },
                 });
             });
